@@ -24,7 +24,7 @@ namespace LeetCode
         {
             foreach (var item in param)
             {
-                Console.WriteLine($"*****{nameof(item.Key)}:{item.Value}****");
+                Console.WriteLine($"*****{nameof(item.Key.GetType())}:{item.Value}****");
             }  
         }
     }
