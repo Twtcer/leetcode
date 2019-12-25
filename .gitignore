@@ -185,3 +185,5 @@ nuget.exe
 node_modules/*
 
 wwwroot
+/.vscode/solution-explorer
+/src/.vscode
