@@ -4,11 +4,29 @@ using System.Text;
 
 namespace LeetCode
 {
-    public  class BaseLesson
+    public abstract class BaseLesson : ILesson
     {
-        public virtual int Index { get; set; }
-        public virtual string Title { get; set; }
-        public virtual string Desc { get; set; }
-        public virtual string Url { get; set; }
+        protected abstract int Index { get; set; }
+        protected abstract string Title { get; set; }
+        protected abstract string Desc { get; set; }
+        protected abstract string Url { get; set; }
+
+        public abstract void Action();
+        public void BaseAction()
+        {
+            Console.WriteLine($"===={nameof(Index)}:{this.Index}====");
+            Console.WriteLine($"===={nameof(Title)}:{this.Title}====");
+            Console.WriteLine($"===={nameof(Desc)}:{this.Desc}====");
+            Console.WriteLine($"===={nameof(Url)}:{this.Url}===="); 
+        }
+
+        public void ShowParam(Dictionary<string,object> param)
+        {
+            foreach (var item in param)
+            {
+                Console.WriteLine($"*****{nameof(item.Key)}:{item.Value}****");
+            }  
+        }
     }
+
 }
