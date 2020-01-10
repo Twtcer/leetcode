@@ -6,10 +6,11 @@ namespace LeetCode
 {
     public abstract class BaseLesson : ILesson
     {
+        private static readonly NLog.Logger log = NLog.LogManager.GetCurrentClassLogger();
         protected abstract int Index { get; set; }
         protected abstract string Title { get; set; }
         protected abstract string Desc { get; set; }
-        protected abstract string Url { get; set; }
+        protected abstract string Url { get; set; } 
 
         public abstract void Action();
         public void BaseAction()
@@ -24,9 +25,13 @@ namespace LeetCode
         {
             foreach (var item in param)
             {
-                Console.WriteLine($"*****{(item.Key)}:{item.Value}****");
+                var type = item.Value.GetType();
+                switch (type)
+                {  
+                }
+                log.Trace($"*****{(item.Key)}:{item.Value}****");
             }  
         }
     }
-
+     
 }
