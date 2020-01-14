@@ -4,7 +4,7 @@ using Xunit;
 
 namespace LeetCode.Test
 {
-    public class Simpleness
+    public class Simple
     {
         private static readonly NLog.Logger log = NLog.LogManager.GetCurrentClassLogger();
 
@@ -80,6 +80,13 @@ namespace LeetCode.Test
                 log.Info($"roman number {roman} to integer is {result}");
             });
 
+
+        }
+
+        [Fact]
+        public void LongestCommonPrefix()
+        {
+            var list = new List<string> { "flower", "flow", "flight" };
 
         }
     }
