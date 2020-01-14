@@ -6,7 +6,7 @@ namespace LeetCode
 {
     public abstract class BaseLesson : ILesson
     {
-        private static readonly NLog.Logger log = NLog.LogManager.GetCurrentClassLogger();
+        public static readonly NLog.Logger log = NLog.LogManager.GetCurrentClassLogger();
         protected abstract int Index { get; set; }
         protected abstract string Title { get; set; }
         protected abstract string Desc { get; set; }
